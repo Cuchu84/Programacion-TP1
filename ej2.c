@@ -17,10 +17,15 @@ char var[2] = {'a', 'b'};
 
 int main(){
     for ( i = 0; i < 2; i++)
-    {
+    {   
         printf("Ingrese un valor nuerico para la variable %c\n", var[i]);
         scanf("%d", &num[i]);
-        
+        while (num[1] >= num[0])
+        {
+            printf("Eror! \nEl numero debe ser menor a %d\n", num[0]);
+            scanf("%d", &num[i]);
+            continue;
+        }
     }
     printf("Usted escogio:\n");
     for ( i = 0; i < 2; i++)
