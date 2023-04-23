@@ -5,33 +5,31 @@ ingresado debe ser menor que el segundo valor ingresado para hacer la suma. Util
 */
 /*
 1. solicitar variables
-2. a>b
+2. a<b
 3. a-b para saber cuantos numeros hay q sumar
 4. iterar todos los numeros a sumar
 5. sumar e imrimir
 */
 #include <stdio.h>
 
-int num[2], suma, i, dif;
-char var[2] = {'a', 'b'};
+int A, B, i, dif, total, suma;
 
 int main(){
-    for ( i = 0; i < 2; i++)
-    {   
-        printf("Ingrese un valor nuerico para la variable %c\n", var[i]);
-        scanf("%d", &num[i]);
-        while (num[1] >= num[0])
-        {
-            printf("Eror! \nEl numero debe ser menor a %d\n", num[0]);
-            scanf("%d", &num[i]);
-            continue;
-        }
-    }
-    printf("Usted escogio:\n");
-    for ( i = 0; i < 2; i++)
+    printf("Ingrese un valor numerico para A\n");
+    scanf("%d", &A);
+    printf("Ingrese un valor numerico para B\n");
+    scanf("%d", &B);
+    while (A >= B)
     {
-        printf("variable: %c - valor: %d\n", var[i], num[i]);
+        printf("Error!\n");
+        printf("El valor de B debe ser mayor al de A \nIngrese un nuevo valor para B\n");
+        scanf("%d", &B);
     }
-    dif = num[0] - num[1];
-    printf("la dif es %d\n", dif);
+    dif = B -A;
+    for ( i = 0; i <= dif; i++)
+    {
+        total = A + i;
+        suma = suma + total;
+    }
+    printf("La suma de los numeros enteros que se encuentran entre los valores A y B es: \n\t%d", suma);
 }
