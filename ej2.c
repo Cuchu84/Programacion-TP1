@@ -12,7 +12,7 @@ ingresado debe ser menor que el segundo valor ingresado para hacer la suma. Util
 */
 #include <stdio.h>
 
-int A, B, i, dif, total, suma;
+int A, B, i, dif, suma;
 
 int main(){
     printf("Ingrese un valor numerico para A\n");
@@ -28,8 +28,9 @@ int main(){
     dif = B -A;
     for ( i = 0; i <= dif; i++)
     {
-        total = A + i;
-        suma = suma + total;
+        int incremental_A;
+        incremental_A = A + i;
+        suma = suma + incremental_A;
     }
     printf("La suma de los numeros enteros que se encuentran entre los valores A y B es: \n\t%d", suma);
 }

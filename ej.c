@@ -1,10 +1,17 @@
 #include <stdio.h>
 
-int A, B, i, dif, total, suma;
+int A, B, i, dif, suma;
 
 int main(){
     printf("Ingrese un valor numerico para A\n");
-    scanf("%d", &A);
+    while (scanf("%d", &A) != 1)/*Si el valor ingresado no es numerico*/
+        {
+            scanf("%d", &A);
+            printf("Error! Ingrese solo valores numericos. \nIngresar un valor numerico para la variable %c: \n", A);
+            while (getchar() != '\n') {}/*Limpiar el buffer de entrada*/
+            continue;
+        }
+    //scanf("%d", &A);
     printf("Ingrese un valor numerico para B\n");
     scanf("%d", &B);
     while (A >= B)
@@ -13,12 +20,12 @@ int main(){
         printf("El valor de B debe ser mayor al de A \nIngrese un nuevo valor para B\n");
         scanf("%d", &B);
     }
-    printf("A = %d - B = %d\n\n", A, B);
     dif = B -A;
     for ( i = 0; i <= dif; i++)
     {
-        total = A + i;
-        suma = suma + total;
+        int incremental_A;
+        incremental_A = A + i;
+        suma = suma + incremental_A;
     }
-    printf("i = %d - A = %d - dif = %d - total = %d - suma = %d\n\n", i, A, dif, total, suma);
+    printf("La suma de los numeros enteros que se encuentran entre los valores A y B es: \n\t%d", suma);
 }
